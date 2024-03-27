@@ -19,6 +19,7 @@ const Img = styled.img`
   transform: scale(1.5) translateX(-7px);
 `;
 
+
 const Cabin = styled.div`
   font-size: 1.6rem;
   font-weight: 600;

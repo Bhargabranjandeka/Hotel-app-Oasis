@@ -18,7 +18,7 @@ export async function getCabins() {
 export async function createnewcabin(newcabin, id) {
   const hasImagePath = newcabin.image?.startsWith?.(supabaseUrl)
 
-  const imageName = `${Math.random()}-${newcabin.image.name}`.replace("/", "")
+  const imageName = `${Math.random()}-${newcabin.image?.name}`.replace("/", "")
 
   const imagePath = hasImagePath ? newcabin.image : `${supabaseUrl}/storage/v1/object/public/Cabins-images/${imageName}`
 
@@ -34,7 +34,8 @@ export async function createnewcabin(newcabin, id) {
     throw new Error("can't find the table")
   }
 
-  if (hasImagePath) return data
+  if (hasImagePath) return data;
+
   const { error: storageError } = await supabase.storage.from("Cabins-images").upload(imageName, newcabin.image);
 
   if (storageError) {

@@ -3,6 +3,7 @@ import Header from "./Header";
 import Sidebar from "./Sidebar";
 import styled from "styled-components";
 import Uploader from "../data/Uploader"
+
 const StyledAppLayout = styled.div`
   display: grid;
   grid-template-columns: 26rem 1fr;
@@ -27,7 +28,7 @@ function Applayout() {
   return (
     <StyledAppLayout>
       <Header />
-      <Sidebar></Sidebar>
+      <Sidebar />
       <Main>
         <Container>
           <Outlet />
