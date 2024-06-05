@@ -11,9 +11,11 @@ function SignupForm() {
   const { register, formState, getValues, handleSubmit, reset } = useForm();
   const { errors } = formState
   const { signingup, isLoading } = useSignup()
+
   function onsubmit({ fullName, email, password }) {
     signingup({ fullName, email, password }, { onSettled: reset })
   }
+
   return (
     <Form onSubmit={handleSubmit(onsubmit)}>
       <FormRow label="Full name" error={errors?.Fullname?.message}>

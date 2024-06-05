@@ -92,7 +92,10 @@ function CheckinBooking() {
       </Box>}
 
       <Box>
-        <Checkbox id='confirm' checked={confirmPaid} disabled={confirmPaid || isCheckingIn} onChange={() => setconfirmPaid((confirm) => !confirm)}>
+        <Checkbox id='confirm'
+          checked={confirmPaid}
+          disabled={confirmPaid || isCheckingIn}
+          onChange={() => setconfirmPaid((confirm) => !confirm)}>
           I confirm that {guests.Fullname} has paid the total amount of {!addbreakfast ? formatCurrency(Totalprice) : `${formatCurrency(Totalprice + optionalbreakfast)} (${formatCurrency(Totalprice)} + ${formatCurrency(optionalbreakfast)})`}
         </Checkbox>
       </Box>

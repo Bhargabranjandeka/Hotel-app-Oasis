@@ -22,16 +22,19 @@ function DashboardLayout() {
   const { confirmedstays, isLoading: isLoading2, Numdays } = useRecentStays();
   const { cabins, isLoading: isLoading3 } = useCabins()
 
-  console.log(bookings)
-  console.log(`stays`, confirmedstays)
 
   if (isLoading1 || isLoading2 || isLoading3) return <Spinner />
 
   return <StyledDashboard>
-    <Stats bookings={bookings} confirmedstays={confirmedstays} Numdays={Numdays} Cabincount={cabins?.length} />
+    <Stats bookings={bookings}
+      confirmedstays={confirmedstays}
+      Numdays={Numdays}
+      Cabincount={cabins?.length} />
     <TodayActivity />
+
     <DurationChart confirmedstays={confirmedstays} />
     <SalesChart bookings={bookings} Numdays={Numdays} />
+
   </StyledDashboard>
 }
 

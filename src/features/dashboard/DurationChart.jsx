@@ -115,7 +115,7 @@ const startDataDark = [
 ];
 
 function prepareData(startData, stays) {
-  // A bit ugly code, but sometimes this is what it takes when working with real data 😅
+
 
   function incArrayValue(arr, field) {
     return arr.map((obj) =>
@@ -135,8 +135,7 @@ function prepareData(startData, stays) {
       if (num >= 15 && num <= 21) return incArrayValue(arr, "15-21 nights");
       if (num >= 21) return incArrayValue(arr, "21+ nights");
       return arr;
-    }, startData)
-    .filter((obj) => obj.value > 0);
+    }, startData).filter((obj) => obj.value > 0);
 
   return data;
 }

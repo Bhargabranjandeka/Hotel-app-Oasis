@@ -15,12 +15,7 @@ function LoginForm() {
   function handleSubmit(e) {
     e.preventDefault();
     if (!email || !password) return;
-    login({ email, password }, {
-      onSettled: () => {
-        setEmail('');
-        setPassword('');
-      }
-    })
+    login({ email, password }, { onSettled: () => { setEmail(''); setPassword(''); } })
   }
 
   return (
@@ -42,7 +37,7 @@ function LoginForm() {
           type="email"
           id="email"
           // This makes this form better for password managers
-          autoComplete="username"
+          autoComplete="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           disabled={isLogging}
